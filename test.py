@@ -1,7 +1,6 @@
 from functools import wraps
 
 import requests
-# from requests.api import get, options, head, post, put, patch, delete
 import click
 import json
 import time
@@ -26,7 +25,7 @@ def timeit(func):
     return timeit_wrapper
 
 
-# http_methods = (get, options, head, post, put, patch, delete)
+
 
 
 def ask_for_input():
@@ -73,24 +72,7 @@ def check_urls():
     return valid_urls
 
 
-# @click.command()
-# @timeit
-# def check_methods_urls(list_methods=http_methods):
-#     """
-#     This script checks url methods dict with methods and status codes
-#     """
-#     new_list_urls = check_urls()
-#     print('In process...')
-#     data = {
-#         str(urll): {
-#             method.__name__.upper():
-#                 method(urll).status_code for method in list_methods if method(urll).status_code != 405}
-#         for urll in new_list_urls}
-#     with open('result.json', "w") as result:
-#         json.dump(data, result, indent=4)
-#     with open('result.json', "r") as read:
-#         result_data = json.load(read)
-#     print(result_data)
+
 
 @click.command()
 @timeit
@@ -122,5 +104,4 @@ def check_methods_new(new_list_urls=check_urls()):
 
 
 if __name__ == '__main__':
-    # check_methods_urls()
     check_methods_new()
