@@ -1,5 +1,4 @@
 from functools import wraps
-
 import requests
 import click
 import json
